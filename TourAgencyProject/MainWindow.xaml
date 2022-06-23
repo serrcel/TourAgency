@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TourAgencyProject"
         mc:Ignorable="d"
-        Title="Туроператор 5000" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Туроператор 5000" Height="450" Width="800" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="47"/>
@@ -17,7 +17,7 @@
             <Separator></Separator>
             <Button Content="База клиентов" VerticalAlignment="Top" Height="44" Width="94"/>
             <Separator></Separator>
-            <Button Content="Статистика туров" VerticalAlignment="Top" Height="44" Width="100"/>
+            <Button Content="Журнал" VerticalAlignment="Top" Height="44" Width="100"/>
             <Separator></Separator>
         </ToolBar>
 
@@ -33,7 +33,7 @@
         <Label Grid.Row="1" Content="Серия и номер загранпаспорта" HorizontalAlignment="Left" Margin="415,52,0,0" VerticalAlignment="Top"/>
         <TextBox Grid.Row="1" HorizontalAlignment="Left" Margin="415,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Height="20"/>
 
-        <ListView Grid.Row="2">
+        <ListView x:Name="ListTour" Grid.Row="2">
             
         </ListView>
     </Grid>

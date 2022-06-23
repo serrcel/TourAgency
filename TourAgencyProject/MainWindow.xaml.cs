@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using System.IO;
 
 namespace TourAgencyProject
 {
@@ -29,5 +29,13 @@ namespace TourAgencyProject
             InitializeComponent();
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Database DB = new Database();
+            DB.Open();
+            ObservableCollection<Tour> tourList = new ObservableCollection<Tour>();
+            tourList = DB.getTourList();
+            ListTour.ItemsSource = tourList;
+        }
     }
 }
