@@ -12,29 +12,150 @@
             <RowDefinition Height="140"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ToolBar Grid.Row="0" HorizontalAlignment="Center" Height="47" VerticalAlignment="Top" Width="800">
-            <Button Content="Оформить путёвку" VerticalAlignment="Top" Width="109" Height="44"/>
+        <ToolBar Grid.Row="0" 
+                 HorizontalAlignment="Center" 
+                 Height="47" 
+                 VerticalAlignment="Top" 
+                 Width="800">
+            
+            <Button 
+                Content="Оформить путёвку" 
+                VerticalAlignment="Top" 
+                Width="109" 
+                Height="44"/>
             <Separator></Separator>
-            <Button Content="База клиентов" VerticalAlignment="Top" Height="44" Width="94"/>
+            <Button 
+                Content="База клиентов" 
+                VerticalAlignment="Top" 
+                Height="44" 
+                Width="94"/>
             <Separator></Separator>
-            <Button Content="Журнал" VerticalAlignment="Top" Height="44" Width="100"/>
+            <Button 
+                Content="Журнал" 
+                VerticalAlignment="Top" 
+                Height="44" 
+                Width="100"/>
             <Separator></Separator>
         </ToolBar>
 
-        <TextBox Grid.Row="1" HorizontalAlignment="Left" Margin="10,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20"/>
-        <Label Grid.Row="1" Content="Фамилия" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top"/>
-        <Label Grid.Row="1" Content="Имя" HorizontalAlignment="Left" Margin="145,52,0,0" VerticalAlignment="Top"/>
-        <TextBox Grid.Row="1" HorizontalAlignment="Left" Margin="145,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20"/>
-        <Label Grid.Row="1" Content="Отчество" HorizontalAlignment="Left" Margin="280
-               ,52,0,0" VerticalAlignment="Top" Height="26"/>
-        <TextBox Grid.Row="1" HorizontalAlignment="Left" Margin="280,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20"/>
-        <Label Grid.Row="1" Content="Активные путевки" HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top"/>
+        <TextBox Grid.Row="1" 
+                 HorizontalAlignment="Left" 
+                 Margin="10,83,0,0" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="120" 
+                 Height="20"
+                 x:Name="textbox1"/>
+        <Label Grid.Row="1" 
+               Content="Фамилия" 
+               HorizontalAlignment="Left" 
+               Margin="10,52,0,0" 
+               VerticalAlignment="Top"/>
+        <Label Grid.Row="1" 
+               Content="Имя" 
+               HorizontalAlignment="Left" 
+               Margin="145,52,0,0" 
+               VerticalAlignment="Top"/>
+        <TextBox Grid.Row="1" 
+                 HorizontalAlignment="Left" 
+                 Margin="145,83,0,0" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="120" 
+                 Height="20"
+                 x:Name="textbox2"/>
+        <Label Grid.Row="1" 
+               Content="Отчество" 
+               HorizontalAlignment="Left" 
+               Margin="280,52,0,0" 
+               VerticalAlignment="Top" 
+               Height="26"/>
+        <TextBox Grid.Row="1" 
+                 HorizontalAlignment="Left" 
+                 Margin="280,83,0,0" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="120" 
+                 Height="20"
+                 x:Name="textbox3"/>
+        <Label Grid.Row="1" 
+               Content="Активные путевки" 
+               HorizontalAlignment="Left" 
+               Margin="10,106,0,0" 
+               VerticalAlignment="Top"/>
 
-        <Label Grid.Row="1" Content="Серия и номер загранпаспорта" HorizontalAlignment="Left" Margin="415,52,0,0" VerticalAlignment="Top"/>
-        <TextBox Grid.Row="1" HorizontalAlignment="Left" Margin="415,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Height="20"/>
+        <Label Grid.Row="1" 
+               Content="Серия и номер загранпаспорта" 
+               HorizontalAlignment="Left" 
+               Margin="415,52,0,0" 
+               VerticalAlignment="Top"/>
+        <TextBox Grid.Row="1" 
+                 HorizontalAlignment="Left" 
+                 Margin="415,83,0,0" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="183" 
+                 Height="20"
+                 x:Name="textbox4"/>
 
-        <ListView x:Name="ListTour" Grid.Row="2">
-            
+        <ListView x:Name="ListTour" 
+                  Grid.Row="2"
+                  
+                  >
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="{Binding Name}" 
+                                           FontSize="20"
+                                           />
+                                        <Label Content="{Binding Cost}" 
+                                           FontSize="20" 
+                                           />
+                                        <Label Content="Р" 
+                                           FontSize="20" 
+                                           />
+                                    </StackPanel>
+                                    <Label Content="{Binding Description}"
+                                           FontSize="14"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="{Binding Departure}"
+                                               FontSize="14"/>
+                                        <Label Content="→"
+                                               FontSize="14"/>
+                                        <Label Content="{Binding Arrival}"
+                                               FontSize="14"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Дата отправления"
+                                               FontSize="14"/>
+                                        <Label Content="{Binding Date}"
+                                               FontSize="14"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Дата возвращения"
+                                               FontSize="14"/>
+                                        <Label Content="{Binding DateBack}"
+                                               FontSize="14"/>
+                                    </StackPanel>
+                                    <Button Content="Купить билет"
+                                            Width="150"
+                                            HorizontalAlignment="Left"
+                                            Margin="10" Click="Button_Click">
+
+                                    </Button>
+                                </StackPanel>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+
         </ListView>
     </Grid>
 </Window>
