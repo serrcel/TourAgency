@@ -19,16 +19,10 @@
                  Width="800">
             
             <Button 
-                Content="Оформить путёвку" 
-                VerticalAlignment="Top" 
-                Width="109" 
-                Height="44"/>
-            <Separator></Separator>
-            <Button 
                 Content="База клиентов" 
                 VerticalAlignment="Top" 
                 Height="44" 
-                Width="94"/>
+                Width="94" Click="Button_Click_2"/>
             <Separator></Separator>
             <Button 
                 Content="Журнал" 

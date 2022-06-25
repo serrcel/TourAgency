@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Collections.ObjectModel;
+using System.Data;
 
 namespace TourAgencyProject
 {
@@ -188,6 +189,19 @@ namespace TourAgencyProject
             string sqlQuery = $"insert into Stats values(N'{record.Name}', {record.Person_id}, {record.Tour_id}, '{record.OrderDate.ToString("yyyy-MM-dd HH:mm:ss.fff")}')";
             SqlCommand cmd = new SqlCommand(sqlQuery, sqlConnection);
             cmd.ExecuteNonQuery();
+        }
+
+        public DataTable getUsers()
+        {
+            if (sqlConnection == null)
+                throw new Exception("Нужно открыть подключение");
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            string sqlQuery = "select * from Person";
+            SqlCommand cmd = new SqlCommand(sqlQuery, sqlConnection);
+            adapter.SelectCommand = cmd;
+            adapter.Fill(table);
+            return table;
         }
     }
 }

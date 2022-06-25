@@ -103,5 +103,11 @@ namespace TourAgencyProject
         {
             Environment.Exit(0);
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            UsersShow UsersWindow = new UsersShow();
+            UsersWindow.Show();
+        }
     }
 }

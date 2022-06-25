@@ -78,6 +78,9 @@
     <Compile Include="Programm.cs" />
     <Compile Include="Records.cs" />
     <Compile Include="Tour.cs" />
+    <Compile Include="UsersShow.xaml.cs">
+      <DependentUpon>UsersShow.xaml</DependentUpon>
+    </Compile>
     <Page Include="JournalHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -95,6 +98,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UsersShow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

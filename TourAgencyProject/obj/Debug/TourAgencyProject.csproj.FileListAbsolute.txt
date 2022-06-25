@@ -19,3 +19,5 @@ D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debu
 D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debug\TourAgencyProject.pdb
 D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debug\JournalHistory.g.cs
 D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debug\JournalHistory.baml
+D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debug\UsersShow.g.cs
+D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debug\UsersShow.baml
