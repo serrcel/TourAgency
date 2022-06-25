@@ -71,9 +71,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="JournalHistory.xaml.cs">
+      <DependentUpon>JournalHistory.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Programm.cs" />
+    <Compile Include="Records.cs" />
     <Compile Include="Tour.cs" />
+    <Page Include="JournalHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

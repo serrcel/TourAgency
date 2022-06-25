@@ -20,12 +20,12 @@ namespace TourAgencyProject
 {
     public partial class MainWindow : Window
     {
+        Person LastPerson = new Person();
         public MainWindow()
         {
             // Получает относительный путь до БД
             string path = Directory.GetCurrentDirectory();
             AppDomain.CurrentDomain.SetData("DataDirectory", path);
-
             InitializeComponent();
         }
 
@@ -60,9 +60,9 @@ namespace TourAgencyProject
             Database DB = new Database();
             DB.Open();
 
-            if (DB.clientAlready(textbox4.Text))
+            if (DB.getPerson(textbox4.Text).Name != "НЕПОЛЬЗОВАТЕЛЬ")
             {
-                int userFlyCount = DB.GetPersonFlyCount(textbox4.Text);
+                int userFlyCount = DB.getPerson(textbox4.Text).FlyCount;
                 if (userFlyCount > 2)
                     MessageBox.Show("Для вас персональная скидка -30% на тур!");
                 currentPerson.FlyCount += userFlyCount;
@@ -71,8 +71,37 @@ namespace TourAgencyProject
             else
             {
                 DB.newClient(currentPerson);
+                MessageBox.Show("Билет куплет, приятного отдыха!");
             }
+            LastPerson = DB.getPerson(textbox4.Text);
+            AddNewRecord(LastPerson);
             DB.Close();
+        }
+        private void AddNewRecord(Person client)
+        {
+            Database DB = new Database();
+            DB.Open();
+            var currentTour = DB.getTour(client.TourID);
+            Records newRecord = new Records()
+            {
+                Name = $"Путевка в {currentTour.Name}",
+                PersonFIO = $"{client.Lastname} {client.Name} {client.Patronymic}",
+                Person_id = client.Id,
+                Tour_id = client.TourID,
+                OrderDate = DateTime.Now
+            };
+            DB.newRecord(newRecord);
+
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            JournalHistory journalWindow = new JournalHistory();
+            journalWindow.Show();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

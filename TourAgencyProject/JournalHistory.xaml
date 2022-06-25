@@ -1,0 +1,62 @@
+﻿<Window x:Class="TourAgencyProject.JournalHistory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TourAgencyProject"
+        mc:Ignorable="d"
+        Title="JournalHistory" Height="450" Width="400" Closing="Window_Closing" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" FontSize="20" Content="Журнал событий"/>
+        <ListView x:Name="JournalList" Grid.Row="1">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Клиент " 
+                                           FontSize="15"
+                                           />
+                                        <Label Content="{Binding PersonFIO}" 
+                                           FontSize="15" 
+                                           />
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Оформил: " 
+                                           FontSize="15"
+                                           />
+                                        <Label Content="{Binding Name}" 
+                                           FontSize="15" 
+                                           />
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Дата покупки: " 
+                                           FontSize="15"
+                                           />
+                                        <Label Content="{Binding OrderDate}" 
+                                           FontSize="15" 
+                                           />
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="----------------------------------------------" 
+                                           FontSize="15"
+                                           />
+                                    </StackPanel>
+                                </StackPanel>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+    </Grid>
+</Window>

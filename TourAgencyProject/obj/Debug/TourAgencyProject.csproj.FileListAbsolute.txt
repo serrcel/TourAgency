@@ -17,3 +17,5 @@ D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debu
 D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debug\TourAgencyProject.csproj.CoreCompileInputs.cache
 D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debug\TourAgencyProject.exe
 D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debug\TourAgencyProject.pdb
+D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debug\JournalHistory.g.cs
+D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debug\JournalHistory.baml
