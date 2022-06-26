@@ -55,6 +55,38 @@ namespace TourAgencyProject
             reader.Close();
             return result;
         }
+        public ObservableCollection<Tour> getTourListWithFilters(string city, string country, string cost)
+        {
+            if (sqlConnection == null)
+                throw new Exception("Нужно открыть подключение");
+            if (city == null | city == "")
+                city = "%";
+            if (country == null | country == "")
+                country = "%";
+            if (cost == null | cost == "")
+                cost = "999999999";
+            string sqlQuery = $"select * from Tour where cost <= {cost} and departure like '{city}' and name like '{country}'";
+            SqlCommand cmd = new SqlCommand(sqlQuery, sqlConnection);
+            ObservableCollection<Tour> result = new ObservableCollection<Tour>();
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                result.Add(new Tour()
+                {
+                    ID = (int)reader["tour_id"],
+                    Name = reader["name"].ToString(),
+                    Description = reader["description"].ToString(),
+                    Arrival = reader["arrival"].ToString(),
+                    Departure = reader["departure"].ToString(),
+                    Cost = (int)reader["cost"],
+                    Programm = (int)reader["tour_programm"],
+                    Date = DateTime.Parse(reader["date"].ToString()),
+                    DateBack = DateTime.Parse(reader["date_back"].ToString())
+                });
+            }
+            reader.Close();
+            return result;
+        }
         public Person getPerson(string serialPassport)
         {
             if (sqlConnection == null)

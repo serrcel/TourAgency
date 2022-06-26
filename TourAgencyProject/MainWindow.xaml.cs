@@ -21,6 +21,7 @@ namespace TourAgencyProject
     public partial class MainWindow : Window
     {
         Person LastPerson = new Person();
+        public ObservableCollection<Tour> tourList;
         public MainWindow()
         {
             // Получает относительный путь до БД
@@ -108,6 +109,13 @@ namespace TourAgencyProject
         {
             UsersShow UsersWindow = new UsersShow();
             UsersWindow.Show();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Filters filterWindow = new Filters();
+            filterWindow.mainWindow = this;
+            filterWindow.Show();
         }
     }
 }

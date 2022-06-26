@@ -21,3 +21,5 @@ D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debu
 D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debug\JournalHistory.baml
 D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debug\UsersShow.g.cs
 D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debug\UsersShow.baml
+D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debug\Filters.g.cs
+D:\Files\Visual Studio Projects\TourAgency\TourAgency\TourAgencyProject\obj\Debug\Filters.baml

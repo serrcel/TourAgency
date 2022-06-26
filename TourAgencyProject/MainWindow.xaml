@@ -17,7 +17,12 @@
                  Height="47" 
                  VerticalAlignment="Top" 
                  Width="800">
-            
+            <Button 
+                Content="Фильтры" 
+                VerticalAlignment="Top" 
+                Height="44" 
+                Width="94" Click="Button_Click_3"/>
+            <Separator></Separator>
             <Button 
                 Content="База клиентов" 
                 VerticalAlignment="Top" 
